@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+        <title>{{ item.name }} - Programming Database</title>
+
+{%endblock%}
+
+
+{% block body %}
+
+    <a href="{% url 'index' %}">&lt; Back</a>
+    {% if item != None %}
+
+        <ul class="list-group">
+        <li class="list-group-item">{{ item.name }}</li>
+        <h4>{{ item.category}}</h4>
+    <p> {{ item.description }}</p>
+
+    {% else %}
+        <p>Invalid ID</p>
+    {% endif %}
+    {% if item.image != None %}
+        <img src="{{ item.image.url }}" width="300" height="auto">
+    {% endif %}
+
+{% endblock %}
+
+
+
+
