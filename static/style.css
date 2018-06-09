@@ -12,7 +12,6 @@ h1.jumbotron-heading{
 }
 
 table {
-    position: fixed;
-    /*width:30%;*/
+
     border-collapse: collapse;
 }
