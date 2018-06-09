@@ -2,23 +2,228 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
+    <title>Album example for Bootstrap</title>
 
- <div class="jumbotron">
-  <h1 class="display-4">Share your travels!</h1>
-  <p class="lead">This is a website to share your travel experiences.</p>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-</div>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+
 
     {% block head %}
-{%  endblock %}
+    {%  endblock %}
 </head>
 
 
 
 <body>
 
+<header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          {% comment %}
+          <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          {% endcomment %}
+
+            <strong id="title">Share Your Travels</strong>
+        {% comment %}</a>{% endcomment %}
+        </div>
+      </div>
+    </header>
+
+<main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Welcome to share your travels</h1>
+          <p class="lead text-muted">On this page you can find pictures from different sides of the world.
+                These are all pcitures of people's experiences.
+                We want to give you the opportunity to share your exeriences with friends!</p>
+          <p>
+            <a href="uploadform" class="btn btn-primary my-2">Upload Picture</a>
+          </p>
+        </div>
+      </section>
+
+<div class="row">
+  <div class="col-md-2">
+        <table>
+          <tr><th>Countries A-Z</th></tr>
+          <tr><td>Austrelia</td></tr>
+          <tr><td>Austria</td></tr>
+          <tr><td>Brazil</td></tr>
+          <tr><td>Egypt</td></tr>
+          <tr><td>England</td></tr>
+          <tr><td>Japan</td></tr>
+          <tr><td>Kongo</td></tr>
+          <tr><td>Mexico</td></tr>
+          <tr><td>Morocco</td></tr>
+          <tr><td>Nepal</td></tr>
+          <tr><td>Peru</td></tr>
+          <tr><td>South Africa</td></tr>
+          <tr><td>Switzerland</td></tr>
+          <tr><td>Thailand</td></tr>
+          <tr><td>USA</td></tr>
+      </table>
+
+  </div>
+
+  <div class="col-md-10">
+            <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                  {% load static %}
+                   <img class="card-img-top" src=" media/media/Australia.jpg"  alt="Australia"/>
+                <div class="card-body">
+                  <p class="card-text">Australia</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Brazil.jpg" alt="Brazil">
+                <div class="card-body">
+                  <p class="card-text">Brazil</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Nepal.jpg" alt="Nepal">
+                <div class="card-body">
+                  <p class="card-text">Nepal</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Switzerland.jpg" alt="Switzerland">
+                <div class="card-body">
+                  <p class="card-text">Switzerland</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Peru.jpg" alt="Peru">
+                <div class="card-body">
+                  <p class="card-text">Peru</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Japan.jpg" alt="Japan">
+                <div class="card-body">
+                  <p class="card-text">Japan</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Mexico.jpg" alt="Mexico">
+                <div class="card-body">
+                  <p class="card-text">Mexico</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/Austria.jpg" alt="Austria">
+                <div class="card-body">
+                  <p class="card-text">Austria</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="media/media/USA.jpg" alt="USA">
+                <div class="card-body">
+                  <p class="card-text">USA</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+</main>
 
 {% block body %}
 {%  endblock %}

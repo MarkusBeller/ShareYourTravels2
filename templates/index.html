@@ -1,47 +1,32 @@
 {% extends 'base.html' %}
 
+{% comment %}
 <html>
 
-
-
-
     {% block head %}
-
-
-
-
     {% endblock %}
 
-{%  block body %}
-
-
-
+    {%  block body %}
 
     <div class="dropdown">
 
     {% for category in categories %}
-
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
      <div class="dropdown-menu" aria-labelledby="dropdownMenu2"> </div>
+
    {{ category.name }}
     {% for item in category.item_set.all %}
+
         <button class="dropdown-item" type="button"> <a href="{% url 'item' item_Id=item.id %}">{{ item.name }}</a> </button>
     {% endfor %}
     {% endfor %}
-#    {% for item in items %}
+
+    {% for item in items %}
 
 
-
-
-
-#    {% endfor %}
-
-
-
-
-
+    {% endfor %}
+    </div>
 
     {% endblock %}
-
-
+{% endcomment %}
