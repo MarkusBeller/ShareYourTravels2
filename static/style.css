@@ -10,8 +10,17 @@ h1 {
 h1.jumbotron-heading{
     padding-top: 20px;
 }
-
-table {
-
+table{
     border-collapse: collapse;
+    position: absolute;
+    margin-left:5px;
 }
+th{
+    padding-bottom: 5px;
+}
+
+
+.form{
+    width: 100px;
+}
+
