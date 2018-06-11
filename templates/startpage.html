@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+<html>
+
+
+{% block head %}
+
+{% endblock %}
+
+{%  block body %}
+
+
+    <div class="dropdown">
+
+        {% for category in categories %}
+
+
+            {{ category.name }}
+
+            {% for item in category.item_set.all %}
+                <button class="dropdown-item" type="button"> <a href="{% url 'item' item_Id=item.id %}">{{ item.name }}</a> </button>
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+
+
+
+    <div class="show-all-pictures">
+
+    {% for category in categories %}
+
+        {{ category.name }}
+
+        {% for item in category.item_set.all %}
+            <div class="col-md-4">
+            <div class="card mb-4 box-shadow>">
+
+            <img class="card-img-top" src = "{{ item.image.url }}" alt = "Profile Picture"/>
+            <p class ="card-text">{{ item.name }}</p>
+
+
+            <div class="card-body">
+
+
+
+        {% endfor %}
+    {% endfor %}
+
+</div>
+
+
+
+
+    <div class="show-pictures-for-one coountry">
+
+    {% for category in categories %}
+
+        {{ category.name }}
+
+        {% for item in category.item_set.all %}
+            <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ item.image.url }}" alt="Mexico">
+
+                <div class="card-body">
+                    <p class="card-text">{{ item.name }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+
+
+        {% endfor %}
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+
+
+</body>
+</html>

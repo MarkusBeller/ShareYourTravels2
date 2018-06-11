@@ -25,6 +25,7 @@ url(r'^$', views.index, name='index'),
 url(r'^item/(?P<item_Id>[0-9]+)', views.item, name='item'),
 url('upload/', views.simple_upload, name='upload'),
 url('uploadform/', views.upload_file, name='uploadform'),
+url('Germany/', views.showPicturesfromCountry, name='Germany'),
 
 
 #url('uploadform/', views.HomeForm, name='form'),

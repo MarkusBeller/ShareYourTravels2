@@ -1,3 +1,4 @@
+
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
@@ -16,6 +17,18 @@ def index(request):
     template = loader.get_template('index.html')
     context = {
         'categories': Category.objects.all()
+    }
+
+    return HttpResponse(template.render(context, request))
+
+
+#Show Items of one category
+def showPicturesfromCountry(request):
+    Category.objects.get(id=1).item_set.all()
+
+    template = loader.get_template('index.html')
+    context = {
+        'categories': Category.objects.all().filter(name='Germany')
     }
 
     return HttpResponse(template.render(context, request))

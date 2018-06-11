@@ -7,7 +7,7 @@ class Category(models.Model):
     name = models.CharField(max_length=32)
 
     def __str__(self):
-        return self.name
+      return self.name
 
 
 class Item(models.Model):
@@ -26,8 +26,3 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
- #   def create_item(sender, **kwargs):
-  #      if kwargs['created']:
-   #         item = Item.objects.create(item=kwargs['instance'])
-#
- #   post_save.connect(create_item, sender='')
