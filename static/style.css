@@ -1,14 +1,12 @@
-h1 {
-    color:red;
+welcome{
+    text-align: center;
 }
+
 
 #title {
    color: white;
     text-align: center;
 
-}
-h1.jumbotron-heading{
-    padding-top: 20px;
 }
 
 .table{

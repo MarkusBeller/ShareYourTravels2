@@ -33,7 +33,7 @@
 <body>
 <div class="page">
 <header>
-      <div class="collapse bg-dark" id="navbarHeader">
+       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
@@ -54,41 +54,41 @@
         {% comment %}</a>{% endcomment %}
         </div>
       </div>
-    </header>
+</header>
 
 
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Welcome to share your travels</h1>
-          <p class="lead text-muted">On this page you can find pictures from different sides of the world.
-                These are all pcitures of people's experiences.
-                We want to give you the opportunity to share your exeriences with friends!</p>
-          <p>
-            <a href="uploadform" class="btn btn-primary my-2">Upload Picture</a>
-          </p>
-        </div>
-      </section>
+      <div class="container">
+            <div class="welcome" style="text-align: center">
+                 <h1 style="margin-top: 5px">Welcome to share your travels</h1>
+                    <p>On this page you can find pictures from different sides of the world.
+                    These are all pcitures of people's experiences.
+                    We want to give you the opportunity to share your exeriences with friends!</p>
+                      <p>
+                        <a href="uploadform" target="_blank" class="btn btn-primary my-2">Upload Picture</a>
+                      </p>
+            </div>
+      </div>
 
 <div class="row">
   <div class="col-md-2">
         <table class="table">
           <tr><th>Countries A-Z</th></tr>
-          <tr><td><form><input type=submit value="Australia"></form></td></tr>
-          <tr><td><form><input type=submit value="Austria"></form></td></tr>
-          <tr><td><form><input type=submit value="Brazil"></form></td></tr>
-          <tr><td><form><input type=submit value="Egypt"></form></td></tr>
-          <tr><td><form><input type=submit value="England"></form></td></tr>
-          <tr><td><form><input type=submit value="Japan"></form></td></tr>
-          <tr><td><form><input type=submit value="Kongo"></form></td></tr>
-          <tr><td><form><input type=submit value="Mexico"></form></td></tr>
-          <tr><td><form><input type=submit value="Morocco"></form></td></tr>
-          <tr><td><form><input type=submit value="Nepal"></form></td></tr>
-          <tr><td><form><input type=submit value="Peru"></form></td></tr>
-          <tr><td><form><input type=submit value="South Africa"></form></td></tr>
-          <tr><td><form><input type=submit value="Switzerland"></form></td></tr>
-          <tr><td><form><input type=submit value="Thailand"></form></td></tr>
-          <tr><td><form><input type=submit value="USA"></form></td></tr>
+          <tr><td>Australia</td></tr>
+          <tr><td>Austria</td></tr>
+          <tr><td>Brazil</td></tr>
+          <tr><td>Egypt</td></tr>
+          <tr><td>England</td></tr>
+          <tr><td>Japan</td></tr>
+          <tr><td>Kongo</td></tr>
+          <tr><td>Mexico</td></tr>
+          <tr><td>Morocco</td></tr>
+          <tr><td>Nepal</td></tr>
+          <tr><td>Peru</td></tr>
+          <tr><td>South Africa</td></tr>
+          <tr><td>Switzerland</td></tr>
+          <tr><td>Thailand</td></tr>
+          <tr><td>USA</td></tr>
       </table>
 
   </div>
@@ -97,13 +97,27 @@
     <div class="container">
         <h1>Upload Your Picture</h1>
 
-    <form method="post" enctype="multipart/form-data">
-        {%  csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
 
-        </div>
+
+        <form method="post" enctype="multipart/form-data">
+
+                {% comment %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name" placeholder="Enter name">
+             </div>
+             <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                 <input type="description" class="form-control" id="description" placeholder="Description">
+             </div>
+          {%endcomment%}
+
+            {%  csrf_token %}
+            {{ form.as_p }}
+                <button type="submit" class="btn btn-primary my-2">Submit</button>
+        </form>
+
+    </div>
     </div>
  </div>
 </div>

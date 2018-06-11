@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" type="text/css" href="style.css">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,10 +10,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
+
     <title>Share Your Travels</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
@@ -24,7 +27,7 @@
 </head>
 
 <body>
-<div class="page">
+{% comment %}<div class="page">{% endcomment %}
 <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -49,45 +52,43 @@
       </div>
     </header>
 
-<main role="main">
 
-      <section class="jumbotron text-center">
+
         <div class="container">
-          <h1 class="jumbotron-heading">Welcome to share your travels</h1>
-          <p class="lead text-muted">On this page you can find pictures from different sides of the world.
-                These are all pcitures of people's experiences.
-                We want to give you the opportunity to share your exeriences with friends!</p>
-          <p>
-            <a href="uploadform" target="_blank" class="btn btn-primary my-2">Upload Picture</a>
-          </p>
+            <div class="welcome" style="text-align: center">
+                 <h1 style="margin-top: 5px">Welcome to share your travels</h1>
+                    <p>On this page you can find pictures from different sides of the world.
+                    These are all pcitures of people's experiences.
+                    We want to give you the opportunity to share your exeriences with friends!</p>
+                      <p>
+                        <a href="uploadform" target="_blank" class="btn btn-primary my-2">Upload Picture</a>
+                      </p>
+            </div>
         </div>
-      </section>
-
-<div class="row">
+ <div class="row">
   <div class="col-md-2">
         <table class="table">
           <tr><th>Countries A-Z</th></tr>
-          <tr><td><form><input type=submit value="Australia"></form></td></tr>
-          <tr><td><form><input type=submit value="Austria"></form></td></tr>
-          <tr><td><form><input type=submit value="Brazil"></form></td></tr>
-          <tr><td><form><input type=submit value="Egypt"></form></td></tr>
-          <tr><td><form><input type=submit value="England"></form></td></tr>
-          <tr><td><form><input type=submit value="Japan"></form></td></tr>
-          <tr><td><form><input type=submit value="Kongo"></form></td></tr>
-          <tr><td><form><input type=submit value="Mexico"></form></td></tr>
-          <tr><td><form><input type=submit value="Morocco"></form></td></tr>
-          <tr><td><form><input type=submit value="Nepal"></form></td></tr>
-          <tr><td><form><input type=submit value="Peru"></form></td></tr>
-          <tr><td><form><input type=submit value="South Africa"></form></td></tr>
-          <tr><td><form><input type=submit value="Switzerland"></form></td></tr>
-          <tr><td><form><input type=submit value="Thailand"></form></td></tr>
-          <tr><td><form><input type=submit value="USA"></form></td></tr>
+          <tr><td>Australia</td></tr>
+          <tr><td>Austria</td></tr>
+          <tr><td>Brazil</td></tr>
+          <tr><td>Egypt</td></tr>
+          <tr><td>England</td></tr>
+          <tr><td>Japan</td></tr>
+          <tr><td>Kongo</td></tr>
+          <tr><td>Mexico</td></tr>
+          <tr><td>Morocco</td></tr>
+          <tr><td>Nepal</td></tr>
+          <tr><td>Peru</td></tr>
+          <tr><td>South Africa</td></tr>
+          <tr><td>Switzerland</td></tr>
+          <tr><td>Thailand</td></tr>
+          <tr><td>USA</td></tr>
       </table>
-
   </div>
 
   <div class="col-md-10">
-            <div class="album py-5 bg-light">
+      <div class="album py-5 bg-light">
         <div class="container">
 
           <div class="row">
@@ -218,16 +219,13 @@
           </div>
         </div>
       </div>
-
   </div>
 </div>
-</main>
+
 
 {% block body %}
 {%  endblock %}
-</div>
+{% comment %}</div>{% endcomment %}
+
 </body>
-
-
-
 </html>
