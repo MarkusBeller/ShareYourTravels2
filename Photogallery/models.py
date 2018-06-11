@@ -31,3 +31,4 @@ class Item(models.Model):
    #         item = Item.objects.create(item=kwargs['instance'])
 #
  #   post_save.connect(create_item, sender='')
+
