@@ -28,6 +28,5 @@ url('uploadform/', views.upload_file, name='uploadform'),
 url('Country_View/', views.showPicturesfromCountry, name='Country_view'),
 
 
-#url('uploadform/', views.HomeForm, name='form'),
 
 ]
