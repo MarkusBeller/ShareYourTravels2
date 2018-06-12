@@ -31,7 +31,7 @@ def showPicturesfromCountry(request):
 
 
 
-    template = loader.get_template('index.html')
+    template = loader.get_template('Country_view.html')
     context = {
         'categories': Category.objects.all().filter(name=load_country)
     }
