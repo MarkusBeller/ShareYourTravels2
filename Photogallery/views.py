@@ -26,11 +26,14 @@ def index(request):
 #Show Items of one category
 def showPicturesfromCountry(request):
     Category.objects.get(id=1).item_set.all()
-    variable ='Germany'
+    your_parameter = request.GET['parameter']
+    load_country = your_parameter
+
+
 
     template = loader.get_template('index.html')
     context = {
-        'categories': Category.objects.all().filter(name=variable)
+        'categories': Category.objects.all().filter(name=load_country)
     }
 
     return HttpResponse(template.render(context, request))
