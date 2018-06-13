@@ -11,8 +11,17 @@ welcome{
 
 .table{
     border-bottom: none;
+
 }
 
 .form{
     width: 100px;
+}
+
+.navigation{
+    height: 100%;
+}
+
+.col-md-2 {
+    height: 100%;
 }

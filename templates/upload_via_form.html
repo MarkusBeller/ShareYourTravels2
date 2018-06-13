@@ -1,13 +1,8 @@
+{%  load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-
-{% comment %}<!DOCTYPE {% extends 'base.html' %}html>{% endcomment %}
-
-
-{% load static %}
-
-{% block head %}
-         <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,87 +10,95 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
+
     <title>Share Your Travels</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
-        <title>{{ item.name }} Upload File</title>
-
-{%endblock%}
 
 
-
-{% block body %}
+    {% block head %}
+    {%  endblock %}
+</head>
 
 <body>
-<div class="page">
+{% comment %}<div class="page">{% endcomment %}
 <header>
-       <div class="collapse bg-dark" id="navbarHeader">
+    <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                </div>
             </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="navbar navbar-dark bg-dark box-shadow">
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-          {% comment %}
-          <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-          {% endcomment %}
+
 
             <strong id="title">Share Your Travels</strong>
-        {% comment %}</a>{% endcomment %}
+
         </div>
-      </div>
+    </div>
 </header>
 
 
 
-      <div class="container">
-            <div class="welcome" style="text-align: center">
-                 <h1 style="margin-top: 5px">Welcome to share your travels</h1>
-                    <p>On this page you can find pictures from different sides of the world.
-                    These are all pcitures of people's experiences.
-                    We want to give you the opportunity to share your exeriences with friends!</p>
-                      <p>
-                        <a href="uploadform" target="_blank" class="btn btn-primary my-2">Upload Picture</a>
-                      </p>
-            </div>
-      </div>
-
+<div class="container">
+    <div class="welcome" style="text-align: center">
+        <h1 style="margin-top: 5px">Welcome to share your travels</h1>
+        <p>On this page you can find pictures from different sides of the world.
+            These are all pcitures of people's experiences.
+            We want to give you the opportunity to share your exeriences with friends!</p>
+        <p>
+            <a href="index" target="_blank" class="btn btn-primary my-2">Back to main page</a>
+        </p>
+    </div>
+</div>
 <div class="row">
-  <div class="col-md-2">
+    <div class="col-md-2">
         <table class="table">
-          <tr><th>Countries A-Z</th></tr>
-          <tr><td>Australia</td></tr>
-          <tr><td>Austria</td></tr>
-          <tr><td>Brazil</td></tr>
-          <tr><td>Egypt</td></tr>
-          <tr><td>England</td></tr>
-          <tr><td>Japan</td></tr>
-          <tr><td>Kongo</td></tr>
-          <tr><td>Mexico</td></tr>
-          <tr><td>Morocco</td></tr>
-          <tr><td>Nepal</td></tr>
-          <tr><td>Peru</td></tr>
-          <tr><td>South Africa</td></tr>
-          <tr><td>Switzerland</td></tr>
-          <tr><td>Thailand</td></tr>
-          <tr><td>USA</td></tr>
-      </table>
+            <tr><th>Countries A-Z</th></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Germany' }}">Germany </a> </td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Australia' }}">Australia</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Austria' }}">Austria</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Brazil' }}">Brazil</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Egypt' }}">Egypt</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'England' }}">England</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Japan' }}">Japan</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Kongo' }}">Kongo</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Mexico' }}">Mexico</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Morocco' }}">Morocco</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Nepal' }}">Nepal</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Peru' }}">Peru</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'South Africa' }}">South Africa</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Switzerland' }}">Switzerland</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'Thailand' }}">Thailand</a></td></tr>
+            <tr><td><a href="Country_View?parameter={{ 'USA' }}">USA</a></td></tr>
+        </table>
+    </div>
 
-  </div>
+
+
+
+
+
+
+
+<body>
+
 
  <div class="col-md-10">
     <div class="container">
         <h1>Upload Your Picture</h1>
+
 
 
 
@@ -122,7 +125,7 @@
  </div>
 </div>
 </body>
-{% endblock %}
+
 
 
 

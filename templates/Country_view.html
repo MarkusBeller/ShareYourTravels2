@@ -33,106 +33,71 @@
 </head>
 
 <body>
-{% comment %}
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
+
+
+
+<div class="col-md-10">
+    <div class="album py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-            {% comment %}
-          <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-          {% endcomment %}
 
-            <strong id="title">Share Your Travels</strong>
-            {% comment %}</a>
-        </div>
-    </div>
-</header>
+            {% for category in categories %}
+
+                {{ category.name }}
+
+                {% for item in category.item_set.all %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.name }}">
+
+                            <div class="card-body">
+                                <p class="card-text">{{ item.name }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a href="{{ MEDIA_URL }}{{item.image.url}}" download="{{ item.name }}">Download Image </a></button>
 
 
-
-<div class="container">
-    <div class="welcome" style="text-align: center">
-        <h1 style="margin-top: 5px">Welcome to share your travels</h1>
-        <p>On this page you can find pictures from different sides of the world.
-            These are all pcitures of people's experiences.
-            We want to give you the opportunity to share your exeriences with friends!</p>
-        <p>
-            <a href="uploadform" target="_blank" class="btn btn-primary my-2">Upload Picture</a>
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-2">
-        <table class="table">
-            <tr><th>Countries A-Z</th></tr>
-            <tr><td>Australia</td></tr>
-            <tr><td>Austria</td></tr>
-            <tr><td>Brazil</td></tr>
-            <tr><td>Egypt</td></tr>
-            <tr><td>England</td></tr>
-            <tr><td>Japan</td></tr>
-            <tr><td>Kongo</td></tr>
-            <tr><td>Mexico</td></tr>
-            <tr><td>Morocco</td></tr>
-            <tr><td>Nepal</td></tr>
-            <tr><td>Peru</td></tr>
-            <tr><td>South Africa</td></tr>
-            <tr><td>Switzerland</td></tr>
-            <tr><td>Thailand</td></tr>
-            <tr><td>USA</td></tr>
-        </table>
-    </div>
-
-
-{% endcomment %}
-
-    <div class="show-pictures-for-one coountry">
-
-        {% for category in categories %}
-
-            {{ category.name }}
-
-            {% for item in category.item_set.all %}
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{ item.image.url }}" alt="Mexico">
-                        <a href="{{object.image.url}} download">Download this image!</a>
-
-                        <div class="card-body">
-                            <p class="card-text">{{ item.name }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{object.image.url}} download">Download Test </a></button>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+                {% endfor %}
+            {% endfor %}
+
+
+            {% for category in categories%}
+
+            {% empty %}
+                <div class="alert alert-danger">
+                    <strong>None of your friends visited this place so far. Be the first to upload pictures for this country by pressing the upload picture!</strong>
+                </div>
+                <div class="alert alert-warning">
+                    <p></p>
+                    <strong> If you are a poor stundet and you cannot effort to travel, you can play Pacman to be happier :)</strong>
+
+                    <br><p></p>
+
+
+                    <!-- Hey Webmaster! Place this html code where you'd like the game to appear. -->
+                    <iframe src="https://www.silvergames.com/de/pacman/iframe" width="450" height="500" style="margin:0;padding:0;border:0"></iframe>
+                    <!-- End of game embed code -->
                 </div>
 
-
-
-
             {% endfor %}
-        {% endfor %}
 
+
+        </div>
     </div>
-
-
-
-
-
 </div>
 
+
+
 </body>
+
+
 </html>
