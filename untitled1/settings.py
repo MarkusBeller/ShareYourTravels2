@@ -126,5 +126,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+
+#This part defines the storage location of the images which will be uploaded.
+
 MEDIA_URL ='/media/'
 MEDIA_ROOT ='media'

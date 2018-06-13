@@ -17,11 +17,11 @@ from django.conf.urls import url
 from Photogallery import views
 
 
-
+# In the URLs.py it is defined which adress can be inserted in the browser and which functionaliy from the views.py will be called.
+#for each item a URL will be generated
 
 urlpatterns = [
 url(r'^$', views.index, name='index'),
-
 url(r'^item/(?P<item_Id>[0-9]+)', views.item, name='item'),
 url('upload/', views.simple_upload, name='upload'),
 url('uploadform/', views.upload_file, name='uploadform'),
