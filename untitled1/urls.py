@@ -21,6 +21,8 @@ from untitled1 import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
+#In this file the URLs and the accoriding websites are descripted. The urls.py which has been defined in the app is also linked.
+
 urlpatterns = [
     url(r'^', include('Photogallery.urls')),
     url('admin/', admin.site.urls),
