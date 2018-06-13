@@ -9,8 +9,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
 
-
-#Show Categories on main field
+#Show all pictures on the main page
 
 def index(request):
     Category.objects.get(id=1).item_set.all()
@@ -24,6 +23,7 @@ def index(request):
 
 
 #Show Items of one category
+
 def showPicturesfromCountry(request):
     Category.objects.get(id=1).item_set.all()
     your_parameter = request.GET['parameter']
