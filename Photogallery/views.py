@@ -22,7 +22,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-#Show Items of one category habdover with parameter
+#Show Items of one category habdover with parameter 'parameter'
 
 def showPicturesfromCountry(request):
     Category.objects.get(id=1).item_set.all()
