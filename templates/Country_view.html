@@ -1,4 +1,5 @@
-<!-- Because the page is internet -->
+<!-- All functionality to show a single country has been separated in the base html.
+If the country view shall be enhanced at a later stage all specific changes shall be made here.  -->
 
 {% extends 'base.html' %}
 {% load staticfiles %}
@@ -9,25 +10,7 @@
 {%  load staticfiles %}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-
-    <title>Share Your Travels</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
 
 
     {% block head %}
@@ -35,68 +18,6 @@
 </head>
 
 <body>
-
-
-
-<div class="col-md-10">
-    <div class="album py-5 bg-light">
-        <div class="container">
-
-            {% for category in categories %}
-
-                {{ category.name }}
-
-                {% for item in category.item_set.all %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.name }}">
-
-                            <div class="card-body">
-                                <p class="card-text">{{ item.name }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            <a href="{{ MEDIA_URL }}{{item.image.url}}" download="{{ item.name }}">Download Image </a></button>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                {% endfor %}
-            {% endfor %}
-
-
-            {% for category in categories%}
-
-            {% empty %}
-                <div class="alert alert-danger">
-                    <strong>Test Test None of your friends visited this place so far. Be the first to upload pictures for this country by pressing the upload picture!</strong>
-                </div>
-                <div class="alert alert-warning">
-                    <p></p>
-                    <strong> If you are a poor stundet and you cannot effort to travel, you can play Pacman to be happier :)</strong>
-
-                    <br><p></p>
-
-
-                    <!-- Hey Webmaster! Place this html code where you'd like the game to appear. -->
-                    <iframe src="https://www.silvergames.com/de/pacman/iframe" width="450" height="500" style="margin:0;padding:0;border:0"></iframe>
-                    <!-- End of game embed code -->
-                </div>
-
-            {% endfor %}
-
-
-        </div>
-    </div>
-</div>
-
 
 
 </body>

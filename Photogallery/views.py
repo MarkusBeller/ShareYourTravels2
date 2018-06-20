@@ -14,7 +14,7 @@ from django.core.files.storage import FileSystemStorage
 def index(request):
     Category.objects.get(id=1).item_set.all()
 
-    template = loader.get_template('html - not used anymore/../templates/index.html')
+    template = loader.get_template('html - not used anymore/../index.html')
     context = {
         'categories': Category.objects.all()
     }
