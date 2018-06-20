@@ -23,7 +23,7 @@ from Photogallery import views
 urlpatterns = [
 url(r'^$', views.index, name='index'),
 url(r'^item/(?P<item_Id>[0-9]+)', views.item, name='item'),
-url('upload/', views.simple_upload, name='upload'),
+
 url('uploadform/', views.upload_file, name='uploadform'),
 url('Country_View/', views.showPicturesfromCountry, name='Country_view'),
 

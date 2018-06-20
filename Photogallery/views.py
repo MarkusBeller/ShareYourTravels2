@@ -14,7 +14,7 @@ from django.core.files.storage import FileSystemStorage
 def index(request):
     Category.objects.get(id=1).item_set.all()
 
-    template = loader.get_template('index.html')
+    template = loader.get_template('html - not used anymore/../templates/index.html')
     context = {
         'categories': Category.objects.all()
     }
@@ -93,26 +93,6 @@ def upload_file(request):
 
 
 
-#upload function with picture only but without the connection to the class item.
-# function can be called with /upload and the data is stored in the media folder
-
-from django.shortcuts import render
-from django.conf import settings
-from django.core.files.storage import FileSystemStorage
-
-
-
-def simple_upload(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'simple_upload.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'simple_upload.html')
 
 
 

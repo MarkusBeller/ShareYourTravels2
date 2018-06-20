@@ -1,3 +1,10 @@
+<!-- This file is the form which is necessary to upload items (pictures) to the database. The uploaded pictures are an instance of the class item.
+<form method="post" enctype="multipart/form-data"> is important in this method to upload the picture. Without this comment it is not possible.
+The code { form.as_p } displays  all parameters defined in the form. The form is generated automatically
+-->
+
+
+
 {%  load staticfiles %}
 <html>
 <head>
@@ -82,16 +89,6 @@
 
         <form method="post" enctype="multipart/form-data">
 
-            {% comment %}
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="name" class="form-control" id="name" placeholder="Enter name">
-             </div>
-             <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
-                 <input type="description" class="form-control" id="description" placeholder="Description">
-             </div>
-            {%endcomment%}
 
             {%  csrf_token %}
             {{ form.as_p }}
