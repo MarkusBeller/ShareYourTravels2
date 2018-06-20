@@ -1,3 +1,5 @@
+#Load all needed packages
+
 
 from django.http import HttpResponse
 from django.template import loader
@@ -9,12 +11,12 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
 
-#Show all pictures on the main page
+#Show all pictures on the main page. Category.objects.all will display all items from the database
 
 def index(request):
     Category.objects.get(id=1).item_set.all()
 
-    template = loader.get_template('html - not used anymore/../index.html')
+    template = loader.get_template('templates/../index.html')
     context = {
         'categories': Category.objects.all()
     }
@@ -22,7 +24,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-#Show Items of one category habdover with parameter 'parameter'
+#Show Items of one category habdover with parameter 'parameter'. The function .filter(parameter) enables to load pictures only from country.
 
 def showPicturesfromCountry(request):
     Category.objects.get(id=1).item_set.all()
@@ -56,7 +58,8 @@ def item(request, item_Id):
     return HttpResponse(template.render(context, request))
 
 
-
+# This is the upload function. It stores a image as an instance of the class item (picture) to the database.
+# The POST method is needed.  For the image upload request.Files is needed
 
 from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
