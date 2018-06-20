@@ -1,6 +1,12 @@
+<!-- this is the base files. All html files which will be extended with base.html will inherent from this file.
+This file has been created to have code which is need on several html pages at one place. -->
+
 {%  load staticfiles %}
 <html>
 <head>
+
+    <!-- here is the reference to the local style.css and the reference to bootstrap. -->
+
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -27,7 +33,10 @@
 </head>
 
 <body>
-{% comment %}<div class="page">{% endcomment %}
+
+
+<!-- This is the header with the introduction text and the two buttons (upload and return to main page). -->
+
 <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -63,6 +72,13 @@
                       </p>
             </div>
         </div>
+
+
+
+<!-- this part is the static navigation bar. The function hands over the country parameter  Country_View?parameter= {{ 'Australia' }}
+With this parameter the category will be called and the items of this catgory will be shown. -->
+
+
  <div class="row">
   <div class="col-md-2">
       <div class="navigation">
@@ -93,20 +109,12 @@
   </div>
 
 
+     <!-- This part shows all pictures of one category. Each item (picture) has the functionality to download the picture or to open it in widescreen.  -->
 
-     {% comment %}
-     <div class="col-md-10">
-         <div class="album py-5 bg-light">
-
-             <div class="con">
-                 {% endcomment %}
 
  <div class="col-md-10">
          {% for category in categories %}
-{% comment %}
-                 <h1> {{ category.name }}</h1><br>
 
-{% endcomment %}
              {% for item in category.item_set.all %}
                 <!-- <div class="col-md-4">-->
                      <div class="card mb-2 box-shadow" style="display:inline-block;margin:10px;width:calc(33% - 21px);">
@@ -140,7 +148,11 @@
              {% endfor %}
          {% endfor %}
 
-   {% for category in categories%}
+
+    {% for category in categories%}
+
+        <!-- If no country is existing, the following error will be shown. A Pacman game has been integrated with an iFrame.  -->
+
 
                      {% empty %}
 
