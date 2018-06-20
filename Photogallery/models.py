@@ -14,12 +14,12 @@ class Category(models.Model):
       return self.name
 
 
-#This class represents the image model. Each image has the following attributes. The pictures are stored in the media folder (upload to media).
+#This class represents the image model. Each image has the following attributes (countries,name, description,image, category). The pictures are stored in the media folder (upload to media).
 # Each Picture has a category ( analogous to country   e.g   Item = Pictutre from Munich, Category is Germany. The categories have been set over the Admin page.)
 
 class Item(models.Model):
 
-    countries = models.TextField(null=True, blank=True)
+ #  countries = models.TextField(null=True, blank=True) not needed longer. Has not be deleted to possible side effects on Admin area.
     name = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='media', blank=True)
